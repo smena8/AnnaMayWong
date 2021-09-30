@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Playfair+Display&display=swap');
+
+:root {
+    --red: #D14234;
+}
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background: black;
+}
+
+/* components */
+
+h1, h2, h3 {
+    color: var(--red);
+    font-family: 'Playfair Display', serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+p {
+    color: white;
+    font-size: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: right;
+}
+
+nav ul > li {
+    list-style: none;
+    margin: 1em 2em;
+}
+
+nav ul > li > a {
+    font-size: 1.25rem;
+	font-weight: 700;
+	text-decoration: none;
+	color: white;
+}
+
+section.main {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main__heading {
+	color: white;
+	font-size: 2em;
+	padding: 0 .5em;
+	text-align: left;
+	animation-name: main__heading;
+	animation-duration: 5000ms;
+	animation-direction: alternate;
+}
+
+@keyframes main__heading {
+    from {
+        transform: translateX(3000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+blockquote {
+    color: var(--red);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto;
+    max-width: 22em;
+    min-width: 10em;
+    padding: 0 1em 0 0;
+    text-transform: uppercase;
+    animation-name: blockquote;
+	animation-duration: 8000ms;
+}
+
+blockquote:first-letter {
+    font-size: 1.25em;
+}
+
+@keyframes blockquote {
+    from {
+        transform: translateX(3000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+.main__portrait {
+	position: absolute;
+	height: 115%;
+	mix-blend-mode: hard-light;
+	top: -1em;
+	z-index: -1;
+    animation-name: portrait;
+    animation-duration: 5000ms;
+}
+
+@keyframes portrait {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.main__quote {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-content: end;
+	align-items: end;
+	max-width: 45em;
+	margin-left: auto;
+	margin-right: 4em;
+	padding: 1em;
+}
+
+.signature {
+	height: 5em;
+	animation-name: signature;
+	animation-duration: 8500ms;
+}
+
+@keyframes signature {
+    from {
+        transform: translateX(3000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+section.early-career {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
+}
+
+.early-career__text {
+    max-width: 25em;
+    padding: 1em;
+}
+
+.eary-career__text--body {
+    display: flex;
+    margin-top: 1em;
+}
+
+
+@media only screen and (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        margin: 1em 3em;
+    }
+
+    .main__heading {
+        padding: 1.5em 1em .25em 0;
+        text-align: right;
+        font-size: 5em;
+    }
+
+    .signature {
+    	margin: 1em 4em 0 auto;
+    }
+
+    .early-career__text {
+        margin-left: 1em;
+    }
+
+    .early-career__text-line {
+        background: white;
+        display: block;
+        margin-top: 3px;
+        margin-right: 5px;
+        height: 3px;
+        width: 40em;
+    }
+}

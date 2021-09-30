@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna May Wong</title>
+    <link rel="stylesheet" href="{% static 'frontend/style.css' %}">
+</head>
+<body>
+<section class="main">
+    <nav>
+        <ul>
+            <li><a href="#">Biography</a></li>
+            <li><a href="/films/">Filmography</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+        </ul>
+    </nav>
+    <div>
+        <img class="main__portrait" src="{% static 'frontend/images/main_portrait.jpg' %}">
+        <h1 class="main__heading">Anna May Wong</h1>
+        <div class="main__quote">
+            <blockquote cite="http://www.worldwildlife.org/who/index.html">
+                “The harder the work, the greater the satisfaction in accomplishing it.”
+            </blockquote>
+            <img class="signature" role="img" src="{% static 'frontend\images\signature.svg' %}" aria-label="Anna May Wong Signature" />
+        </div>
+    </div>
+</section>
+<section class="early-career">
+    <img src="{% static 'frontend/images/baby_anna.jpg' %}" height="500px">
+    <div class="early-career__text">
+        <h2>EARLY LIFE</h2>
+        <div class="eary-career__text--body">
+            <div class="early-career__text-line"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl condimentum id venenatis a condimentum vitae. Purus viverra accumsan in nisl nisi. Netus et malesuada fames ac turpis. Risus nec feugiat in fermentum posuere urna. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Suspendisse faucibus interdum posuere lorem. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. </p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
