@@ -20,6 +20,10 @@ body {
 
 /* components */
 
+section {
+    min-height: 100vh;
+}
+
 h1, h2, h3 {
     color: var(--red);
     font-family: 'Playfair Display', serif;
@@ -34,7 +38,7 @@ p {
     font-size: 1rem;
 }
 
-nav ul {
+ul {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -42,12 +46,12 @@ nav ul {
     text-align: right;
 }
 
-nav ul > li {
+ul > li {
     list-style: none;
     margin: 1em 2em;
 }
 
-nav ul > li > a {
+ul > li > a {
     font-size: 1.25rem;
 	font-weight: 700;
 	text-decoration: none;
@@ -55,9 +59,11 @@ nav ul > li > a {
 }
 
 section.main {
+    background: black;
     position: relative;
     min-height: 100vh;
     overflow: hidden;
+    transform: translate3d(0px, 0px, 0px);
 }
 
 .main__heading {
@@ -90,15 +96,19 @@ blockquote {
     min-width: 10em;
     padding: 0 1em 0 0;
     text-transform: uppercase;
-    animation-name: blockquote;
-	animation-duration: 8000ms;
+
 }
 
 blockquote:first-letter {
     font-size: 1.25em;
 }
 
-@keyframes blockquote {
+.main__quote {
+    animation-name: main__quote;
+	animation-duration: 8000ms;
+}
+
+@keyframes main__quote {
     from {
         transform: translateX(3000px);
     }
@@ -156,27 +166,109 @@ blockquote:first-letter {
     }
 }
 
-section.early-career {
+section.early-life, .early-career__container, section.quote {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
     padding: 1em;
+    transform: translate3d(0px, 0px, 0px);
 }
 
-.early-career__text {
+.early-life__img, .early-career__img {
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+.early-life__text, .early-career__text {
     max-width: 25em;
     padding: 1em;
+    transform: translate3d(600px, 0px, 0px);
 }
 
-.eary-career__text--body {
+.early-life__text--body, .early-career__text--body {
     display: flex;
     margin-top: 1em;
 }
 
+section.early-career {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.early-career__quote {
+    text-align: center;
+}
+
+section.toll-sea {
+	background: radial-gradient(transparent, black);
+	position: relative;
+	background-image: url(/static/frontend/images/tollofthesea.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+section.stardom {
+    position: relative;
+}
+
+.stardom__grid-container > * > img {
+    width: 100%;
+}
+
+.gradient-top {
+	background: linear-gradient(black 60%, transparent);
+	height: 5em;
+    position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.gradient-bottom {
+	background: linear-gradient(transparent, black 60%);
+	height: 5em;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.quote__img__container {
+    position: relative;
+    width: 50%;
+}
+
+.quote__img__container:after {
+    content: '';
+    position: absolute;
+    width: 30em;
+    height: 30em;
+    background: var(--red);
+    border-radius: 50%;
+    top: 0;
+    right: -7em;
+    z-index: -1;
+    clip-path: circle(45% at center);
+}
+
+.quote__img {
+    clip-path: circle(55% at center);
+}
+
+.quote > blockquote {
+    font-size: 3em;
+    min-width: 6em;
+    padding: 0;
+    text-align: left;
+    width: 6em;
+}
 
 @media only screen and (min-width: 600px) {
-    nav ul {
+    ul {
         flex-direction: row;
         margin: 1em 3em;
     }
@@ -191,16 +283,36 @@ section.early-career {
     	margin: 1em 4em 0 auto;
     }
 
-    .early-career__text {
+    .early-life__text, .early-career__text {
         margin-left: 1em;
     }
 
-    .early-career__text-line {
+    .early-life__text-line, .early-career__text-line  {
         background: white;
         display: block;
         margin-top: 3px;
         margin-right: 5px;
         height: 3px;
         width: 40em;
+    }
+
+    section.toll-sea {
+	    background-position: initial;
+    }
+
+    .stardom__grid-container {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-gap: 10px;
+        padding: 2em;
+    }
+
+    .quote__img__container:after {
+        left:0;
+    }
+
+    .quote > blockquote {
+        margin: 0;
+        text-align: right;
     }
 }
