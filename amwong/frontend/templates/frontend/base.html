@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="{% static 'frontend/style.css' %}">
 </head>
 <body>
+<nav>
+    <ul>
+        <li><a href="#bio">Biography</a></li>
+        <li><a href="/films/">Filmography</a></li>
+        <li><a href="/gallery/">Gallery</a></li>
+    </ul>
+</nav>
 <section class="main">
-    <nav>
-        <ul>
-            <li><a href="#">Biography</a></li>
-            <li><a href="/films/">Filmography</a></li>
-            <li><a href="/gallery/">Gallery</a></li>
-        </ul>
-    </nav>
-    <div>
-        <img class="main__portrait" src="{% static 'frontend/images/main_portrait.jpg' %}">
+    <img class="main__portrait" src="{% static 'frontend/images/main_portrait.jpg' %}">
+    <div class="main__body">
         <h1 class="main__heading">Anna May Wong</h1>
         <div class="main__quote">
             <blockquote cite="http://www.worldwildlife.org/who/index.html">
@@ -27,55 +27,64 @@
         </div>
     </div>
 </section>
-<section class="early-life">
-    <img class="early-life__img scroll" src="{% static 'frontend/images/baby_anna.jpg' %}" height="500px" data-start="-600" data-ratex=".75" data-ratey="0" data-direction="right">
-    <div class="early-life__text scroll" data-start="600" data-ratex=".75" data-ratey="0" data-direction="left">
+<section id="bio" class="early-life">
+    <img class="early-life__img scroll" src="{% static 'frontend/images/baby_anna.jpg' %}" height="500px" data-start="-600" data-ratex="1" data-ratey="0" data-direction="right">
+    <div class="text scroll" data-start="600" data-ratex="1" data-ratey="0" data-direction="left">
         <h2>EARLY LIFE</h2>
-        <div class="early-life__text--body">
-            <div class="early-life__text-line"></div>
+        <div class="text--body">
+            <div class="text-line"></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl condimentum id venenatis a condimentum vitae. Purus viverra accumsan in nisl nisi. Netus et malesuada fames ac turpis. Risus nec feugiat in fermentum posuere urna. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Suspendisse faucibus interdum posuere lorem. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. </p>
         </div>
     </div>
 </section>
 <section class="early-career">
     <div class="early-career__container">
-        <div class="early-career__text scroll" data-start="-1200" data-ratex=".75" data-ratey="0" data-direction="right">
+        <div class="text scroll" data-start="-1200" data-ratex=".75" data-ratey="0" data-direction="right">
             <h2>EARLY CAREER</h2>
-            <div class="early-career__text--body">
-                <div class="early-career__text-line"></div>
+            <div class="text--body">
+                <div class="text-line"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl condimentum id venenatis a condimentum vitae. Purus viverra accumsan in nisl nisi. Netus et malesuada fames ac turpis. Risus nec feugiat in fermentum posuere urna. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Suspendisse faucibus interdum posuere lorem. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. </p>
             </div>
         </div>
         <img class="early-career__img scroll" src="{% static 'frontend/images/lobbycard.jpg' %}" height="500px" data-start="1200" data-ratex=".75" data-ratey="0" data-direction="left">
     </div>
-    <blockquote class="early-career__quote" cite="http://www.worldwildlife.org/who/index.html">
+    <blockquote class="early-career__quote scroll" cite="" data-start="1400" data-ratex="0" data-ratey="1" data-direction="up">
             “She should be seen again and often on the screen.”
     </blockquote>
 </section>
 <section class="toll-sea">
+    <div class="gradient-radial"></div>
+    <img src="{% static 'frontend/images/The_Toll_of_the_Sea.gif' %}">
 </section>
 <section class="stardom">
     <div class="gradient-top"></div>
     <div class="stardom__grid-container">
-        <div>
+        <div class="gallery-column scroll" data-start="750" data-ratex="0" data-ratey=".25" data-direction="up">
             <img src="{% static 'frontend/images/annamaywong_portrait1.png' %}">
             <div>
                 <h2>STARDOM</h2>
-                <div class="early-career__text--body">
-                    <div class="early-career__text-line"></div>
+                <div class="text--body">
+                    <div class="text-line"></div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl condimentum id venenatis a condimentum vitae. Purus viverra accumsan in nisl nisi. Netus et malesuada fames ac turpis. Risus nec feugiat in fermentum posuere urna. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Suspendisse faucibus interdum posuere lorem. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.<br>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl condimentum id venenatis a condimentum vitae. Purus viverra accumsan in nisl nisi. Netus et malesuada fames ac turpis. Risus nec feugiat in fermentum posuere urna. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Suspendisse faucibus interdum posuere lorem. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. </p>
                 </div>
             </div>
         </div>
-        <div>
+        <div class="gallery-column scroll" data-start="-1000" data-ratex="0" data-ratey=".25" data-direction="down">
             <img src="{% static 'frontend/images/mag_cover.png' %}">
             <img src="{% static 'frontend/images/film_song.jpg' %}">
             <img src="{% static 'frontend/images/film_piccadilly.jpg' %}">
+            <img src="{% static 'frontend/images/annamaywong_portrait3.jpg' %}">
+            <img src="{% static 'frontend/images/annamaywong_boxing.jpg' %}">
+
         </div>
-        <div>
-            <img src="{% static 'frontend/images/Sessue_Hayakawa.jpg' %}">
+        <div class="gallery-column scroll" data-start="500" data-ratex="0" data-ratey=".25" data-direction="up">
             <img src="{% static 'frontend/images/photobooth.jpg' %}">
+            <img src="{% static 'frontend/images/Sessue_Hayakawa.jpg' %}">
+            <img src="{% static 'frontend/images/Anna_May_Wong_by_Eugene_Robert_Richee,_1937.jpg' %}">
+            <img src="{% static 'frontend/images/hollywoodstar.jpg' %}">
+            <img src="{% static 'frontend/images/annamaywong_portrait4.jpg' %}">
+            <img src="{% static 'frontend/images/annamaywong_portrait5.jpg' %}">
         </div>
     </div>
     <div class="gradient-bottom"></div>
@@ -89,17 +98,17 @@
     </blockquote>
 </section>
 <section class="legacy">
-    <div>
+    <div class="text">
         <h2>HER LEGACY</h2>
-        <div class="early-career__text--body">
-            <div class="early-career__text-line"></div>
+        <div class="text--body">
+            <div class="text-line"></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl condimentum id venenatis a condimentum vitae. Purus viverra accumsan in nisl nisi. Netus et malesuada fames ac turpis. Risus nec feugiat in fermentum posuere urna. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Suspendisse faucibus interdum posuere lorem. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.<br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl condimentum id venenatis a condimentum vitae. Purus viverra accumsan in nisl nisi. Netus et malesuada fames ac turpis. Risus nec feugiat in fermentum posuere urna. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Suspendisse faucibus interdum posuere lorem. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. </p>
         </div>
     </div>
-    <div>
-        <span class="circle"></span>
-        <img src="{% static 'frontend/images/annamaywong_sister.png' %}">
+    <div class="image__container">
+        <img class="img__legacy" src="{% static 'frontend/images/annamaywong_sister.png' %}">
+        <span class="image__background-circle"></span>
     </div>
 </section>
 <footer>
@@ -108,6 +117,7 @@
         <li><a href="/films/">Filmography</a></li>
         <li><a href="/gallery/">Gallery</a></li>
     </ul>
+    <div class="gradient-bottom"></div>
 </footer>
 <script type="text/javascript" src="{% static 'frontend/script.js' %}"></script>
 </body>

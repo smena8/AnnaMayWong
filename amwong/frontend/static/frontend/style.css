@@ -16,12 +16,13 @@
 
 body {
     background: black;
+    position: relative;
 }
 
 /* components */
 
 section {
-    min-height: 100vh;
+    padding: 1em;
 }
 
 h1, h2, h3 {
@@ -36,6 +37,14 @@ h2 {
 p {
     color: white;
     font-size: 1rem;
+}
+
+nav {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	padding: 2em 0;
 }
 
 ul {
@@ -64,6 +73,11 @@ section.main {
     min-height: 100vh;
     overflow: hidden;
     transform: translate3d(0px, 0px, 0px);
+}
+
+.main__body {
+	position: absolute;
+	bottom: 0;
 }
 
 .main__heading {
@@ -151,9 +165,10 @@ blockquote:first-letter {
 }
 
 .signature {
-	height: 5em;
 	animation-name: signature;
 	animation-duration: 8500ms;
+	height: 5em;
+	margin: 1em auto;
 }
 
 @keyframes signature {
@@ -166,7 +181,7 @@ blockquote:first-letter {
     }
 }
 
-section.early-life, .early-career__container, section.quote {
+section.early-life, .early-career__container, section.quote, section.legacy {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -183,13 +198,12 @@ section.early-life, .early-career__container, section.quote {
     transform-style: preserve-3d;
 }
 
-.early-life__text, .early-career__text {
+.text {
     max-width: 25em;
     padding: 1em;
-    transform: translate3d(600px, 0px, 0px);
 }
 
-.early-life__text--body, .early-career__text--body {
+.text--body {
     display: flex;
     margin-top: 1em;
 }
@@ -205,41 +219,67 @@ section.early-career {
 }
 
 section.toll-sea {
-	background: radial-gradient(transparent, black);
 	position: relative;
-	background-image: url(/static/frontend/images/tollofthesea.gif);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+}
+
+.gradient-radial {
+	background: radial-gradient(transparent, black 80%);
+    position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+
+section.toll-sea > img {
+	background-image: url(/static/frontend/images/The_Toll_of_the_Sea.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
 
 section.stardom {
     position: relative;
+    max-height: 200vh;
+    overflow: hidden;
+}
+
+.stardom__grid-container {
+    display: block;
 }
 
 .stardom__grid-container > * > img {
     width: 100%;
 }
 
-.gradient-top {
+.stardom > .gradient-top {
 	background: linear-gradient(black 60%, transparent);
 	height: 5em;
     position: absolute;
 	top: 0;
 	width: 100%;
+	z-index: 1;
+	display: none;
 }
 
-.gradient-bottom {
+.stardom > .gradient-bottom {
 	background: linear-gradient(transparent, black 60%);
 	height: 5em;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	display: none;
+}
+
+.gallery-column {
+    display: none;
 }
 
 .quote__img__container {
     position: relative;
-    width: 50%;
+    width: 100%;
 }
 
 .quote__img__container:after {
@@ -267,6 +307,76 @@ section.stardom {
     width: 6em;
 }
 
+.image__container {
+    position: relative;
+}
+
+.image__background-circle {
+    height: 40em;
+    width: 40em;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background: white;
+    border-radius: 50%;
+    left: 0;
+    z-index: -1;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+footer > .gradient-bottom {
+	background: linear-gradient(transparent, black 70%);
+	height: 14em;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    section.legacy > .text {
+        padding-bottom: 10em;
+    }
+
+    section.quote {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    section.quote {
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (min-width: 800px) {
+
+    .main__body {
+        right: 0;
+    }
+
+    .stardom__grid-container {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-gap: 10px;
+        padding: 2em;
+    }
+
+    .stardom > .gradient-top, .stardom > .gradient-bottom, .gallery-column {
+        display: revert;
+    }
+
+}
+
 @media only screen and (min-width: 600px) {
     ul {
         flex-direction: row;
@@ -283,11 +393,11 @@ section.stardom {
     	margin: 1em 4em 0 auto;
     }
 
-    .early-life__text, .early-career__text {
+    .text {
         margin-left: 1em;
     }
 
-    .early-life__text-line, .early-career__text-line  {
+    .text-line  {
         background: white;
         display: block;
         margin-top: 3px;
@@ -300,11 +410,8 @@ section.stardom {
 	    background-position: initial;
     }
 
-    .stardom__grid-container {
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        grid-gap: 10px;
-        padding: 2em;
+    .quote__img__container {
+        width: 50%;
     }
 
     .quote__img__container:after {
@@ -315,4 +422,11 @@ section.stardom {
         margin: 0;
         text-align: right;
     }
+
+    .img__legacy {
+        height: 40em;
+    }
 }
+
+
+
